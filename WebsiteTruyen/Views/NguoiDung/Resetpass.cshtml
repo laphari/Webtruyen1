@@ -1,0 +1,15 @@
+﻿@model WebsiteTruyen.Model.NguoiDung
+
+@{
+    ViewBag.Title = "Resetpass";
+}
+
+<h2>Resetpass</h2>
+<form action="/NguoiDung/Resetpass" method="post">
+    <div class="form-group">
+        <label>Mail</label>
+        <input class="form-control" name="Email" type="text" />
+        @Html.ValidationMessageFor(m => m.MailNguoiDung, "", new { @class = "text-danger" })
+    </div>
+    <button type="submit" class="btn btn-primary">Reset</button>
+</form>

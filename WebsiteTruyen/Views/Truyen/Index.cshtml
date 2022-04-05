@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebsiteTruyen.DAL.ModelMapper.Gettruyenvatheloaics>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<a href="/Truyen/Viewcreate/" class="btn btn-danger btn-sm" style="color:white"><i class="fas fa-trash-alt"></i></a>
+<table class="table">
+    <tr>
+        <th>
+            Tên Truyện
+        </th>
+        <th>
+            Trạng Thái
+        </th>
+        <th>
+            Ảnh
+        </th>
+        <th>
+            Thời gian tạo
+        </th>
+        <th>
+            Tên Người Đăng
+        </th>
+        <th>
+            Thao Tác
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Truyen.TenTruyen
+            </td>
+            <td>
+                
+                    @if(item.Truyen.Trangthai == true)
+                    {
+                        <p>Đã hoàn thành</p>
+                    }
+                    else
+                    {
+                         <p>Đang cập nhập</p>
+                    }
+                  
+            </td>
+            <td>
+                <img src=" @item.Truyen.AnhMoTaTruyen" width="200px" height="200px" />
+            </td>
+            <td>
+                @item.Truyen.TimeCreated
+            </td>
+            <td>
+                @item.TenNguoiDung
+            </td>
+            <td>
+                @*<a href="/Author/Delete?id=@item.AuthorId" class="btn btn-danger btn-sm" style="color:white"><i class="fas fa-trash-alt"></i></a>
+                    <a href="/Author/Detail?id=@item.AuthorId" class="btn btn-danger btn-sm" style="color:white"><i class="fas fa-info-circle"></i></a>
+                    <a href="/Author/Viewupdate?id=@item.AuthorId" class="btn btn-danger btn-sm" style="color:white"><i class="fas fa-edit"></i></a>*@
+                <a href="/Truyen/Delete?id=@item.Truyen.Idtruyen" class="btn btn-danger btn-sm" style="color:white"><i class="fas fa-trash-alt"></i></a>
+            </td>
+        </tr>
+    }
+</table>

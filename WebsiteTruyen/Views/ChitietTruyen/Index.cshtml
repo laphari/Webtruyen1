@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Ảnh
+        </th>
+        <th>
+           Đánh Giá
+        </th>
+        <th>
+            Mô tả truyện
+        </th>
+        <th>
+            Thời Gian Tạo
+        </th>
+        <th>
+            Thao Tác
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src=" @item.AnhMoTaChitietTruyen" width="200px" height="200px" />
+            </td>
+            <td>
+                @item.DanhGia
+            </td>
+            <td>
+                @item.MoTaTruyen
+            </td>
+            <td>
+                @item.TimeCreated
+            </td>
+            <td>
+                @*<a href="/Author/Delete?id=@item.AuthorId" class="btn btn-danger btn-sm" style="color:white"><i class="fas fa-trash-alt"></i></a>
+                    <a href="/Author/Detail?id=@item.AuthorId" class="btn btn-danger btn-sm" style="color:white"><i class="fas fa-info-circle"></i></a>
+                    <a href="/Author/Viewupdate?id=@item.AuthorId" class="btn btn-danger btn-sm" style="color:white"><i class="fas fa-edit"></i></a>*@
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Viewcreate";
+}
+
+<h2>Viewcreate</h2>
+
+<div style="margin-left:20%;background-color:sandybrown;width:50%">
+    <form action="/Theloai/Create" method="post" enctype="multipart/form-data">
+        <label>Tên thể loại</label>
+        <input type="text" class="form-control" name="gettentheloai" />
+        <label>Thời gian tạo</label>
+        <input type="date" class="form-control" name="getthoigiantao" />
+        <label>Thời gian sửa</label>
+        <input type="date" class="form-control" name="getthoigiansua" />
+        <label>Thời gian xóa</label>
+        <input type="date" class="form-control" name="getthoigianxoa" />
+        <label>Người tạo</label>
+        <input type="text" class="form-control" name="getnguoitao" />
+        <button type="submit" class="btn-danger" onclick="clickk()">Tạo</button>
+    </form>
+</div>

@@ -1,0 +1,24 @@
+﻿@model WebsiteTruyen.Model.NguoiDung
+
+@{
+    ViewBag.Title = "UpdatePass";
+}
+
+<h2>UpdatePass</h2>
+
+<form action="/NguoiDung/UpdatePass" method="post">
+    <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" name="Email" type="text" />
+    </div>
+    <div class="form-group">
+        <label>Password cũ</label>
+        <input class="form-control" name="matkhaucu" type="password" />
+    </div>
+    <div class="form-group">
+        <label>Password mới</label>
+        <input class="form-control" name="newpass" type="password" />
+    </div>
+    @Html.ValidationSummary(true, "Matkhausai", new { @class = "text-danger" })
+    <input type="submit" value="Update" />
+</form>

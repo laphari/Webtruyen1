@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Viewcreate";
+}
+
+<h2>Viewcreate</h2>
+
+<div style="margin-left:20%;background-color:sandybrown;width:50%">
+    <form action="/ChitietTruyen/Create" method="post" enctype="multipart/form-data">
+        <label>Ảnh</label>
+        <input type="file" class="form-control" name="getanhchitiettruyen" />
+        <label>Đánh Giá</label>
+        <input type="number" class="form-control" name="getdanhgia" />
+        <label>Mô tả truyện</label>
+        <textarea name="getmotatruyen">
+
+        </textarea>
+        <label>Thời gian tạo</label>
+        <input type="date" class="form-control" name="getthoigiantao" />
+        <label>Thời gian sửa</label>
+        <input type="date" class="form-control" name="getthoigiansua" />
+        <label>Thời gian xóa</label>
+        <input type="date" class="form-control" name="getthoigianxoa" />
+        <button type="submit" class="btn-danger" onclick="clickk()">Tạo</button>
+    </form>
+</div>

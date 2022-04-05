@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Tên Thể Loại
+        </th>
+        <th>
+            Thời Gian Tạo
+        </th>
+        <th>
+            Thời Gian Sửa
+        </th>
+        <th>
+            Thời Gian Xóa
+        </th>
+        <th>
+            Người Tạo
+        </th>
+        <th>
+            Thao Tác
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.TenTheLoai
+            </td>
+            <td>
+                @item.TimeCreated
+            </td>
+            <td>
+                @item.TimeUpdated
+            </td>
+            <td>
+                @item.TimeDeleted
+            </td>
+            <td>
+                @item.UserCreated
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    }
+</table>

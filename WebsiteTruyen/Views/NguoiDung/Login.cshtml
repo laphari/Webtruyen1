@@ -1,0 +1,22 @@
+﻿@model WebsiteTruyen.Model.NguoiDung
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+<form action="/NguoiDung/Login" method="post">
+    <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" name="MailNguoiDung" type="text" />
+        @Html.ValidationMessageFor(m => m.MailNguoiDung, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input class="form-control" name="MatKhauNguoiDung" type="password" />
+        @Html.ValidationMessageFor(m => m.MatKhauNguoiDung, "", new { @class = "text-danger" })
+    </div>
+    @Html.ValidationSummary(true, "FailLogin", new { @class = "text-danger" })
+    <input type="submit" value="Login" />
+</form>

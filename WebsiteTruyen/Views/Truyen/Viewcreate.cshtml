@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Viewcreate";
+}
+<h1>@ViewData["demosesion"]</h1>
+<h2>Viewcreate</h2>
+<div style="margin-left:20%;background-color:sandybrown;width:50%">
+    <form action="/Truyen/Create" method="post" enctype="multipart/form-data">
+        <label>ID</label>
+        <input type="text" class="form-control" name="getid" />
+        <label>Tên Truyện</label>
+        <input type="text" class="form-control" name="gettentruyen" />
+        <select name="gettrangthai">
+            <option value="true">Đã hoàn thành</option>
+            <option value="false">Đang cập nhập</option>
+        </select>
+        <br />
+        <label>Ảnh</label>
+        <input type="file" class="form-control" name="getanhtruyen" />
+        <label>Thể loại</label>
+        <select >
+            @foreach (var item in @ViewData["demo"] as List<WebsiteTruyen.Model.TheLoai>) 
+            {
+                <option value="@item.IdtheLoai">@item.TenTheLoai</option>
+            }
+        </select>
+        <label>Thời gian tạo</label>
+        <input type="date" class="form-control" name="getthoigiantao" />
+        <label>Thời gian sửa</label>
+        <input type="date" class="form-control" name="getthoigiansua" />
+        <label>Thời gian xóa</label>
+        <input type="date" class="form-control" name="getthoigianxoa" />
+        <button type="submit" class="btn-danger" onclick="clickk()">Tạo</button>
+    </form>
+</div>
